@@ -2,18 +2,14 @@
 #include <stdio.h>
 
 int D_size(int S, int D) {
-    int currentday = 1;
-    int currentsize = S;
-    int leaveday=currentsize;
-    while (currentday <= D) {
-        if (currentday <= D && D <= leaveday)
-            return currentsize;
-        currentday = leaveday +1;
-        currentsize++;
-        leaveday += currentsize;
+    while (1) {
+        D -= S;
+        if (D <= 0)
+            break;
+        S++;
     }
+    return S;
 }
-   
 
 int main() {
     int S, D;
