@@ -8,15 +8,15 @@ struct ListNode
     struct ListNode* next;
 };
 
+
 int getDecimalValue(struct ListNode* head)
 {
-    int sum=0;
-    while (head->next != NULL) {
-        sum = (sum + head->val) * 2;
-        head=head->next;
+    int ans=0;
+    while (head != NULL) {
+        ans = ans * 2 + head->val;
+        head = head->next;
     }
-    sum += head->val;
-    return sum;
+    return ans;
 }
 
 void Construct(struct ListNode* node, int length, int num)
