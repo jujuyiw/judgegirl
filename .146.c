@@ -31,7 +31,7 @@ int main()
             myData[i].charASCII = i + 32; //ASCII 32~126
         }
         //統計字元頻率
-        len = strlen(str);
+        len = strlen(str); //strlen是計算字串長度的函數
         for (int i = 0;i < len;i++)
             if (str[i] >= 32 && str[i] <= 126)
                 myData[str[i] - 32].frequency++;
