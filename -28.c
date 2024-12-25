@@ -1,20 +1,16 @@
 #define _CRT_SECURE_NO_WARNINGS
-#define M 100
 #include <stdio.h>
+#include <stdlib.h>
 
-
-int square(int n,int sum) {
-	sum += n * n;
-	if (n == 1) {
-		return sum;
-	}
-	square(n - 1, sum);
+int sum(int n) {
+	if (n == 1)
+		return 1;
+	return n * n + sum(n - 1);
 }
 
 int main() {
 	int n;
 	scanf("%d", &n);
-	int sum = 0;
-	printf("%d", square(n,sum));
+	printf("%d", sum(n));
 	return 0;
 }
